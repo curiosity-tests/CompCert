@@ -881,7 +881,7 @@ Local Transparent destroyed_by_op.
   exploit functions_transl; eauto. intro FN.
   generalize (transf_function_no_overflow _ _ H5); intro NOOV.
   exploit find_label_goto_label. eauto. eauto.
-  instantiate (2 := rs0#X5 <- Vundef #X31 <- Vundef).
+  instantiate (2 := rs0#X6 <- Vundef #X31 <- Vundef).
   Simpl. eauto.
   eauto.
   intros [tc' [rs' [A [B C]]]].

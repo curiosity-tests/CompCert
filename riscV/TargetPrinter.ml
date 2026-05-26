@@ -526,12 +526,12 @@ module Target : TARGET =
          fprintf oc "%s jumptable [ " comment;
          List.iter (fun l -> fprintf oc "%a " print_label l) tbl;
          fprintf oc "]\n";
-         fprintf oc "	sll	x5, %a, 2\n" ireg r;
+         fprintf oc "	sll	x6, %a, 2\n" ireg r;
          fprintf oc "	lla	x31, %a\n" label lbl;
-         fprintf oc "	add	x5, x31, x5\n";
-         fprintf oc "	lw	x5, 0(x5)\n";
-         fprintf oc "	add	x5, x31, x5\n";
-         fprintf oc "	jr	x5\n";
+         fprintf oc "	add	x6, x31, x6\n";
+         fprintf oc "	lw	x6, 0(x6)\n";
+         fprintf oc "	add	x6, x31, x6\n";
+         fprintf oc "	jr	x6\n";
          jumptables := (lbl, tbl) :: !jumptables;
          fprintf oc "%s end pseudoinstr btbl\n" comment
       | Pnop ->
