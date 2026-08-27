@@ -54,7 +54,9 @@ endif
 # deprecated-since-8.19
 # deprecated-since-8.20
 # deprecated-reference-since-9.0
+# deprecated-reference-since-Stdlib-9.0
 # deprecated-reference-since-9.1
+# deprecated-reference-since-Stdlib-9.1
 #    renamings performed in Coq's standard library;
 #    using the new names would break compatibility with earlier Coq versions.
 # deprecated-from-Coq
@@ -74,7 +76,9 @@ COQCOPTS ?= \
   -w -deprecated-since-8.19 \
   -w -deprecated-since-8.20 \
   -w -deprecated-reference-since-9.0 \
+  -w -deprecated-reference-since-Stdlib-9.0 \
   -w -deprecated-reference-since-9.1 \
+  -w -deprecated-reference-since-Stdlib-9.1 \
   -w -deprecated-from-Coq \
   -w -register-all \
   -w -notation-for-abbreviation \
@@ -96,8 +100,11 @@ cparser/Parser.vo: COQCOPTS += -w -deprecated-instance-without-locality -w -depr
 flocq/%.vo MenhirLib/%.vo: COQCOPTS+=\
   -w -deprecated-syntactic-definition \
   -w -deprecated-since-9.0 \
+  -w -deprecated-since-Stdlib-9.0 \
   -w -deprecated-since-9.1 \
-  -w -deprecated-since-9.2
+  -w -deprecated-since-Stdlib-9.1 \
+  -w -deprecated-since-9.2 \
+  -w -deprecated-since-Stdlib-9.2
 
 # For the extraction phase, we silence other warnings:
 # change-dir-deprecated:
