@@ -2,7 +2,7 @@
 
 Code generation and optimization:
 - Branch relaxation implemented for AArch64 and revised for PowerPC.
-- Aarch64: shorten function preludes by using pre-indexed store-pair instructions (#583)
+- AArch64: shorten function preludes by using pre-indexed store-pair instructions (#583)
 
 Bug fixes:
 - More prudent handling of static names for string literals (#579)
@@ -24,7 +24,7 @@ Specifications and proofs:
 - `Mem.loadv`, `Mem.storev`: explicit check that all addressed bytes
   are at offsets <= `Ptrofs.max_unsigned`
   (Previously, this was implicitly ensured by the alignment check, but
-  it is no longer ensured with the revised alignment handling).
+  the revised alignment handling makes an explicit check necessary.)
 - Stricter formal semantics for `free`, enforcing the requirement that
   the argument is a pointer obtained via `malloc` (#592)
 - Implement `Iteration.WfIter` without axioms, and make explicit
