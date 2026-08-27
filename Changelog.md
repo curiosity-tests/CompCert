@@ -25,6 +25,8 @@ Specifications and proofs:
   are at offsets <= `Ptrofs.max_unsigned`
   (Previously, this was implicitly ensured by the alignment check, but
   it is no longer ensured with the revised alignment handling).
+- Stricter formal semantics for `free`, enforcing the requirement that
+  the argument is a pointer obtained via `malloc` (#592)
 - Implement `Iteration.WfIter` without axioms, and make explicit
   the dependency of `Iteration.GenIter` on classical axioms.
 - Provide counted "for" loops in `Iteration.CountedLoop` and use them
