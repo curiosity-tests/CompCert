@@ -12,6 +12,7 @@ Bug fixes:
 - Thread the current typing environment through `Elab.elab_initializer`.
 - Printing of assembly files: quote command-line arguments when needed (#586)
 - Printing of assembly files: revised string quoting in debugging information (#588)
+- x86 64 bits, `Pjmptbl` instruction: make sure the 32-bit argument is zero-extended to 64 bits before indexing in the jump table (#595)
 
 Usability:
 - AArch64 asm clobbers: recognize more register names (#576)

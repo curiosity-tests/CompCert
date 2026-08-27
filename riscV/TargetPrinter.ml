@@ -521,6 +521,7 @@ module Target : TARGET =
          fprintf oc "	flw	%a, %a, x31 %s %.18g\n"
                     freg rd label lbl comment (camlfloat_of_coqfloat32 f)
       | Pbtbl(r, tbl) ->
+         assert (Int64.of_int (List.length tbl) <= 0x8000_0000L);
          let lbl = new_label() in
          fprintf oc "%s jumptable [ " comment;
          List.iter (fun l -> fprintf oc "%a " print_label l) tbl;
